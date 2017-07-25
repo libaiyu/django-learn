@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 
 
 # Create your models here.
+
 #创建文章模型
 class Article(models.Model):
 #models中所有的模型都是django.db.models.Model的子类
@@ -57,7 +58,6 @@ class Tag(models.Model):
         return self.tag
 
 
-# models.py
 class Comment(models.Model):
     username = models.CharField('昵称',max_length=10)
     content = models.TextField('评论内容')
@@ -66,3 +66,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.content[:25]
+    
