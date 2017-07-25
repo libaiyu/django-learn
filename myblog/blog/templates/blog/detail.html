@@ -1,0 +1,12 @@
+﻿<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head><title>Detail</title></head>
+<body>
+<h1 style='color:blue;'>
+    <a href="{% url 'blog:detail' article.pk%}">
+</h1>
+<h3>{{article.title}}</h3>
+{{article.text|safe}}
+</body>
+</html
+

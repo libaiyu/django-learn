@@ -1,0 +1,19 @@
+﻿<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head><title>首页</title></head>
+<body>
+<h3>分类<h3>
+{% for category in category_list%}
+    <a href="{% url 'blog:category' category.pk %}">{{category.category}}</a><br>
+{% endfor %}
+<h3>标签</h3>
+{% for tag in tag_list%}
+    <a href="{% url 'blog:tag' tag.pk %}">{{tag.tag}}</a><br>
+{% endfor %}
+<h3>文章列表</h3>
+{% for article in article_list%}
+    <a href="{% url 'blog:article' article.pk %}">{{article.title}}</a><br>
+{% endfor %}
+</body>
+</html>
+

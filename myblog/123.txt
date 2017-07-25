@@ -1,0 +1,12 @@
+卷 LEARN_SOFT 的文件夹 PATH 列表
+卷序列号为 00000200 237D:1AF7
+E:.
+│  manage.py
+│  123.txt
+│  
+└─myblog
+        settings.py
+        urls.py
+        wsgi.py
+        __init__.py
+        
