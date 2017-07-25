@@ -1,0 +1,26 @@
+﻿
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+<hr />
+<h1>Comment</h1>
+<form method="post" action="{% url 'blog:comment' article.pk %}">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field }}
+        <br>
+        <br>
+    {% endfor %}
+<button type="submit">Submit</button>
+</form>
+<hr />
+{% for comment in comment_list %}
+    {{ comment.username }}
+    {{ comment.created_time }}
+    {{ comment.content }}
+<a href="">Reply</a>
+<hr />
+{% endfor %}
+</body>
+</html>
+

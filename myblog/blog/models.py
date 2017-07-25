@@ -1,4 +1,8 @@
+
+
 from django.db import models
+from django.core.urlresolvers import reverse
+
 
 # Create your models here.
 #创建文章模型
@@ -32,6 +36,10 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+    #新增方法，得到当前文章的url，用于CommentView
+    def get_absolute_url(self):
+        return reverse('blog:detail',kwargs={'article_id':self.pk})
+
 
 #创建分类模型     
 class Category(models.Model):
@@ -47,3 +55,14 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.tag
+
+
+# models.py
+class Comment(models.Model):
+    username = models.CharField('昵称',max_length=10)
+    content = models.TextField('评论内容')
+    created_time = models.DateTimeField('评论时间',auto_now_add=True)
+    article = models.ForeignKey(Article,verbose_name='文章',on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.content[:25]

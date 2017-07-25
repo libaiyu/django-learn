@@ -9,6 +9,6 @@
 <h3>{{article.title}}</h3>
 {{article.text|safe}}
 <br />
-{% include 'blog/comment.html' %}
+**{% include 'blog/comment.html' %}**
 </body>
 </html>

@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^article/(?P<article_id>\d+)$',views.ArticleView.as_view(),name='article'),
     url(r'^category/(?P<category_id>\d+)$',views.CategoryView.as_view(),name='category'),
     url(r'^tag/(?P<tag_id>\d+)$',views.TagView.as_view(),name='tag'),
+    url(r'^article/(?P<article_id>\d+)/comment/$',views.CommentView.as_view(),name='comment'),
     
 ]
